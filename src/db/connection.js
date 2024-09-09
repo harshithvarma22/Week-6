@@ -1,10 +1,5 @@
-const mongoose = require('mongoose');
-require('dotenv').config();  // For environment variables
+const mongoose= require('mongoose');
 
-// Connect to MongoDB Atlas using the connection string from .env
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log("Database is successfully connected"))
-.catch((error) => console.error("Unsuccessful Database connection", error));
+mongoose.connect('mongodb://127.0.0.1:27017/FoodAndNutrition')
+.then(()=>console.log("Database is successfully connected"))
+.catch(()=>console.log("Unsuccessful Database connection"))
